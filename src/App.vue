@@ -1,56 +1,50 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
+    <v-navigation-drawer app clipped v-model="drawer">
+      Navigation Lists
+    </v-navigation-drawer>
+    <v-app-bar dark color="indigo" app clipped-left>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>CoC Util</v-toolbar-title>
       <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <v-toolbar-items>
+        <v-menu offset-y>
+          <template v-slot:activator="{ on }">
+            <v-btn v-on="on" text>Support</v-btn>
+          </template>
+          <v-list>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>Consulting and support</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-content @click="hoge">
+                <v-list-item-title>Discord community</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+        <v-btn text>Support</v-btn>
+      </v-toolbar-items>
     </v-app-bar>
-
-    <v-content>
-      <HelloWorld />
-    </v-content>
+    <v-footer dark color="indigo" app>
+      Copyright © 2020 GoA. All Rights Reserved.
+    </v-footer>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-
 export default {
   name: "App",
-
-  components: {
-    HelloWorld
-  },
-
+  components: {},
   data: () => ({
-    //
-  })
+    drawer: false
+  }),
+  methods: {
+    hoge: function() {
+      console.log("test");
+    }
+  }
 };
 </script>
