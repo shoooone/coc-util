@@ -35,16 +35,22 @@
 </template>
 
 <script>
+import { searchClans } from './repository/clan-repository';
+
 export default {
-  name: "App",
+  name: 'App',
   components: {},
   data: () => ({
-    drawer: false
+    drawer: false,
   }),
   methods: {
     hoge: function() {
-      console.log("test");
-    }
-  }
+      console.log('test');
+    },
+  },
+  async mounted() {
+    const clans = await searchClans('はろ');
+    console.log(clans);
+  },
 };
 </script>
