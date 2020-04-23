@@ -1,7 +1,7 @@
 import Axios from 'axios';
 
 export const myApiClient = Axios.create({
-  baseURL: 'https://api.clashofclans.com/v1/',
+  baseURL: 'http://localhost:8080/',
   method: 'GET',
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
