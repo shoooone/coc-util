@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest
 class ProxyController(val restTemplate: RestTemplate) {
 
     @CrossOrigin("*")
-    @GetMapping("*")
+    @GetMapping("**")
     fun proxy(req: HttpServletRequest): ResponseEntity<String?> {
         val res = restTemplate.getForEntity<String>("""https://api.clashofclans.com/v1${req.requestURI}?${req.queryString}""")
         return ResponseEntity.status(res.statusCode).body(res.body)
