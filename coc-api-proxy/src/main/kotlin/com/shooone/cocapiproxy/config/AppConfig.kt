@@ -1,4 +1,4 @@
-package com.shooone.cocapiproxy
+package com.shooone.cocapiproxy.config
 
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.web.client.RestTemplateBuilder
