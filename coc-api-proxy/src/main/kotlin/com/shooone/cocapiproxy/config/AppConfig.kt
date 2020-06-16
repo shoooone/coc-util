@@ -1,5 +1,6 @@
 package com.shooone.cocapiproxy.config
 
+import com.amazonaws.services.s3.AmazonS3ClientBuilder
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.web.client.RestTemplateBuilder
 import org.springframework.context.annotation.Bean
@@ -8,6 +9,8 @@ import org.springframework.http.HttpRequest
 import org.springframework.http.client.*
 import org.springframework.web.client.RestTemplate
 import org.springframework.web.util.DefaultUriBuilderFactory
+import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient
+import software.amazon.awssdk.services.dynamodb.DynamoDbClient
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
@@ -31,6 +34,12 @@ class AppConfig {
         return restTemplate
 
     }
+
+    @Bean
+    fun amazonS3() = AmazonS3ClientBuilder.standard().build()
+
+    @Bean
+    fun dynamoDb() = DynamoDbEnhancedClient.builder().dynamoDbClient(DynamoDbClient.create()).build()
 
 }
 

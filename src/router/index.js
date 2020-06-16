@@ -4,6 +4,7 @@ import Top from '../views/Top.vue';
 import Clans from '../views/Clans.vue';
 import Ranking from '../views/Ranking.vue';
 import Layouts from '../views/Layouts.vue';
+import LayoutsUpload from '../views/LayoutsUpload.vue';
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/layouts',
     name: 'Layouts',
     component: Layouts,
+  },
+  {
+    path: '/layouts-upload',
+    name: 'LayoutsUpload',
+    component: LayoutsUpload,
   },
 ];
 

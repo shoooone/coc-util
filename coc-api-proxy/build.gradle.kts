@@ -25,13 +25,16 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.cloud:spring-cloud-starter-aws")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.springframework.boot:spring-boot-configuration-processor")
+    implementation("com.amazonaws:aws-java-sdk-s3:1.11.802")
     implementation("software.amazon.awssdk:dynamodb-enhanced:2.13.32")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
+
+    implementation("org.springdoc:springdoc-openapi-ui:1.3.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
