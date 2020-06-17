@@ -25,7 +25,7 @@
         <v-list-item>
           <v-list-item-content>
             <v-list-item-title class="title grey--text text--darken-2">
-              Navigation Lists
+              Menu
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
