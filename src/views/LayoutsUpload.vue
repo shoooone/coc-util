@@ -35,17 +35,13 @@
               <v-subheader>TH Level</v-subheader>
             </v-col>
             <v-col cols="10">
-              <v-btn-toggle v-model="layout.level" mandatory>
-                <v-btn large value="th5">TH5</v-btn>
-                <v-btn large value="th6">TH6</v-btn>
-                <v-btn large value="th7">TH7</v-btn>
-                <v-btn large value="th8">TH8</v-btn>
-                <v-btn large value="th9">TH9</v-btn>
-                <v-btn large value="th10">TH10</v-btn>
-                <v-btn large value="th11">TH11</v-btn>
-                <v-btn large value="th12">TH12</v-btn>
-                <v-btn large value="th13">TH13</v-btn>
-              </v-btn-toggle>
+              <v-select
+                v-model="layout.level"
+                lavel="TH Level"
+                :items="thLevels"
+                placeholder="Select townhall level."
+              >
+              </v-select>
             </v-col>
           </v-row>
           <v-row align="center" v-if="layout.thOrBh === '2'">
@@ -111,6 +107,44 @@ export default {
       file: null,
     },
     imageUrl: '',
+    thLevels: [
+      {
+        text: 'TH5',
+        value: 'th5',
+      },
+      {
+        text: 'TH6',
+        value: 'th6',
+      },
+      {
+        text: 'TH7',
+        value: 'th7',
+      },
+      {
+        text: 'TH8',
+        value: 'th8',
+      },
+      {
+        text: 'TH9',
+        value: 'th9',
+      },
+      {
+        text: 'TH10',
+        value: 'th10',
+      },
+      {
+        text: 'TH11',
+        value: 'th11',
+      },
+      {
+        text: 'TH12',
+        value: 'th12',
+      },
+      {
+        text: 'TH13',
+        value: 'th13',
+      },
+    ],
   }),
   methods: {
     imagePreview: function() {
